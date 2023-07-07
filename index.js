@@ -2,12 +2,19 @@ const fs = require("fs/promises");
 const express = require("express");
 const cors = require("cors");
 const _ = require("lodash");
-const { v4: uuid } = require("uuid");
-
+const { v4: uuid } = require("uuid")
+const port = process.env.PORT || '3000';
 const app = express();
 
 app.use(express.json());
 //app.use(express.cors());
+
+
+app.get("/", (req, res) => {
+
+	res.send("Your Express API is up and running!");
+	
+	});
 
 app.get("/outfit", (req, res) => {
 	const tops = ["Black", "White", "Orange", "Navy"];
@@ -52,4 +59,4 @@ app.post("/comments", async ( req, res) => {
 	 });
 });
 
-app.listen(3000, () => console.log("API Server is running..."));
+app.listen(port, () => console.log("API Server is running..."));
