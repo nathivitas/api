@@ -1,0 +1,1 @@
+[![Board Status](https://dev.azure.com/ncpcaraballodev/5b321a8d-b388-4150-825b-f8ee8ab77fcf/af857fc9-9d86-4e00-a0d5-ec350ba79f45/_apis/work/boardbadge/c474da66-cbb8-4ba6-94e4-7d477e786c98)](https://dev.azure.com/ncpcaraballodev/5b321a8d-b388-4150-825b-f8ee8ab77fcf/_boards/board/t/af857fc9-9d86-4e00-a0d5-ec350ba79f45/Microsoft.RequirementCategory)
