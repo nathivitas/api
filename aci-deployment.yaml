@@ -1,0 +1,31 @@
+apiVersion: '2019-12-01'
+location: eastus
+name: natyaca
+properties:
+  containers:
+  - name: natyaca-container
+    properties:
+      environmentVariables:
+      - name: AZURE_CLIENT_ID
+        secureValue: "${{AZURE_CLIENT_ID}}"
+      - name: AZURE_CLIENT_SECRET
+        secureValue: "${{AZURE_CLIENT_SECRET}}"
+      - name: AZURE_TENANT_ID
+        secureValue: "${{AZURE_TENANT_ID}}"
+      image: natyacr.azurecr.io/natyaca:latest
+      resources:
+        requests:
+          cpu: 1.0
+          memoryInGb: 1.5
+      ports:
+      - port: 3000
+  osType: Linux
+  restartPolicy: Always
+  ipAddress:
+    type: Public
+    ports:
+    - protocol: tcp
+      port: 3000
+    dnsNameLabel: natyaca-app
+tags: {}
+type: Microsoft.ContainerInstance/containerGroups
