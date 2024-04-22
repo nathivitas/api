@@ -45,3 +45,8 @@ jobs:
         export AZURE_CLIENT_SECRET=${{ secrets.AZURE_CLIENT_SECRET }}
         export AZURE_TENANT_ID=${{ secrets.AZURE_TENANT_ID }}
         envsubst < aci-deployment.yaml > aci-deployment-filled.yaml
+    - name: Deploy to Azure Container Apps
+      run: |
+        az containerapp create --resource-group MyResourceGroup --name natyaca --yaml aci-deployment-template.yaml
+      env:
+        AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
