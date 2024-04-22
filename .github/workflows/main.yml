@@ -30,4 +30,8 @@ jobs:
       run: az acr login --name natyaca
       env:
         AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+        
+    - name: Build Docker image
+      run: |
+        docker build . -t natyaca.azurecr.io/natyaca:${{ github.sha }}
 
