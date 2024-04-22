@@ -39,5 +39,9 @@ jobs:
       run: |
         docker push natyaca.azurecr.io/natyaca:${{ github.sha }}
 
-
-
+    - name: Prepare ACI deployment file
+      run: |
+        export AZURE_CLIENT_ID=${{ secrets.AZURE_CLIENT_ID }}
+        export AZURE_CLIENT_SECRET=${{ secrets.AZURE_CLIENT_SECRET }}
+        export AZURE_TENANT_ID=${{ secrets.AZURE_TENANT_ID }}
+        envsubst < aci-deployment.yaml > aci-deployment-filled.yaml
