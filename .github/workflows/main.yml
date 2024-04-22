@@ -34,4 +34,10 @@ jobs:
     - name: Build Docker image
       run: |
         docker build . -t natyaca.azurecr.io/natyaca:${{ github.sha }}
+    
+    - name: Push Docker image to ACR
+      run: |
+        docker push natyaca.azurecr.io/natyaca:${{ github.sha }}
+
+
 
