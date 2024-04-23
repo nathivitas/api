@@ -5,7 +5,7 @@ name: natyaca
 properties:
   environmentId: "/subscriptions/9ee63a25-6edb-46ea-a1a0-3b00fbcf7f3f/resourceGroups/natyenv/providers/Microsoft.App/managedEnvironments/natyenv"
   configuration:
-    activeRevisionsMode: "Single"
+    activeRevisionsMode: Single
     ingress:
       external: true
       targetPort: 3000
