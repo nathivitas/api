@@ -49,4 +49,4 @@ jobs:
       with:
         yamlConfigPath: aci-deployment.yaml
         resourceGroup: natyenv
-        imageToDeploy: natyaca.azurecr.io/natyaca:4fe6b18b20a2cb8fbb9907d7b7d87deebbb60f63
+        imageToDeploy: natyaca.azurecr.io/natyaca:${{ github.sha }}
