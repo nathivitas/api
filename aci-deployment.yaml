@@ -5,11 +5,6 @@ name: natyaca
 properties:
   environmentId: "/subscriptions/9ee63a25-6edb-46ea-a1a0-3b00fbcf7f3f/resourceGroups/natyenv/providers/Microsoft.App/managedEnvironments/natyenv"
   configuration:
-    secrets:
-      - name: azure-client-id
-        value: "${{AZURE_CLIENT_ID}}"
-      - name: azure-client-secret
-        value: "${{AZURE_CLIENT_SECRET}}"
     activeRevisionsMode: "Multiple"
     ingress:
       external: true
