@@ -12,7 +12,7 @@ properties:
   template:
     containers:
       - name: natyaca-container
-        image: natyacr.azurecr.io/natyaca:${{GITHUB_SHA}}
+        image: natyaca.azurecr.io/natyaca:${{GITHUB_SHA}}
         env:
           - name: AZURE_CLIENT_ID
             secretRef: azure-client-id
