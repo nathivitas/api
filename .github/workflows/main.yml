@@ -47,6 +47,6 @@ jobs:
     - name: Build and deploy Container App
       uses: azure/container-apps-deploy-action@v1
       with:
-        yaml: aci-deployment-filled.yaml
+        yamlConfigPath: .
         resourceGroup: natyenv
         imageToDeploy: ${{ secrets.ACR_LOGIN_SERVER }}.azurecr.io/natyaca:${{ github.sha }}
