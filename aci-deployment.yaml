@@ -19,7 +19,6 @@ properties:
     scale:
       minReplicas: 1
       maxReplicas: 3
-tags: {}
 type: Microsoft.App/containerApps
 
 
