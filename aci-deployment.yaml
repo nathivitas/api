@@ -12,12 +12,7 @@ properties:
   template:
     containers:
       - name: natyaca-container
-        image: natyaca.azurecr.io/natyaca:${{GITHUB_SHA}}
-        env:
-          - name: AZURE_CLIENT_ID
-            secretRef: azure-client-id
-          - name: AZURE_CLIENT_SECRET
-            secretRef: azure-client-secret
+        image: natyaca.azurecr.io/natyaca:${{ GITHUB_SHA }}
         resources:
           cpu: 0.5
           memory: "1Gi"
@@ -26,5 +21,6 @@ properties:
       maxReplicas: 3
 tags: {}
 type: Microsoft.App/containerApps
+
 
 
