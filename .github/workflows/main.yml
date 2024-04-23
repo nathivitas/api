@@ -37,10 +37,16 @@ jobs:
         export AZURE_CLIENT_SECRET=${{ secrets.AZURE_CLIENT_SECRET }}
         export AZURE_TENANT_ID=${{ secrets.AZURE_TENANT_ID }}
         envsubst < aci-deployment.yaml > aci-deployment-filled.yaml
+    # - name: Build and deploy Container App
+    #   uses: azure/container-apps-deploy-action@v1
+    #   with:
+    #     acrName: ${{secrets.ACR_LOGIN_SERVER}}
+    #     containerAppName: natyaca
+    #     resourceGroup: natyenv
+    #     imageToDeploy: natyaca.azurecr.io/natyaca:${{ github.sha }}
     - name: Build and deploy Container App
       uses: azure/container-apps-deploy-action@v1
       with:
-        acrName: ${{secrets.ACR_LOGIN_SERVER}}
-        containerAppName: natyaca
+        yaml: aci-deployment-filled.yaml
         resourceGroup: natyenv
-        imageToDeploy: natyaca.azurecr.io/natyaca:${{ github.sha }}
+        imageToDeploy: ${{ secrets.ACR_LOGIN_SERVER }}.azurecr.io/natyaca:${{ github.sha }}
