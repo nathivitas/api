@@ -47,6 +47,6 @@ jobs:
         envsubst < aci-deployment.yaml > aci-deployment-filled.yaml
     - name: Deploy to Azure Container Apps
       run: |
-        az containerapp create -g natyenv --yaml aci-deployment-filled.yaml
+        az containerapp create -g natyenv -n natyaca --yaml aci-deployment-filled.yaml
       env:
         AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
