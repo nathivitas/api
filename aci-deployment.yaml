@@ -1,7 +1,7 @@
 location: eastus
 name: natyaca
 properties:
-  managedEnvironmentId: /subscriptions/9ee63a25-6edb-46ea-a1a0-3b00fbcf7f3f/resourceGroups/natyenv/providers/Microsoft.App/managedEnvironments/natyenv
+  environmentId: /subscriptions/9ee63a25-6edb-46ea-a1a0-3b00fbcf7f3f/resourceGroups/natyenv/providers/Microsoft.App/managedEnvironments/natyenv
   configuration:
     activeRevisionsMode: Single
     ingress:
@@ -13,7 +13,7 @@ properties:
         image: natyaca.azurecr.io/natyaca:${{ GITHUB_SHA }}
         resources:
           cpu: 0.5
-          memory: 1Gi
+          memory: 1
     scale:
       minReplicas: 1
       maxReplicas: 3
