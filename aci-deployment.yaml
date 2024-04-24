@@ -16,6 +16,8 @@ properties:
         env:
           - name: PORT
             value: "80"
+          - name: ACR_LOGIN_SERVER
+            value: "${ACR_LOGIN_SERVER}"
     scale:
       minReplicas: 1
       maxReplicas: 3
